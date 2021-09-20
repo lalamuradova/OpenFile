@@ -1,0 +1,38 @@
+﻿<Window x:Class="WPF_Task3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Task3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <WrapPanel Orientation="Horizontal" Background="Bisque">
+                <TextBlock Width="250" Name="txtBlock" FontSize="25" Margin="15,15,0,0">Path</TextBlock>
+                <Image Source="/icon/open.png" MouseDown="Image_MouseDown" Width="40" Margin="0,20,0,0" />
+                <Button x:Name="saveBtn" Click="saveBtn_Click" Background="DarkSalmon" FontWeight="DemiBold" FontSize="25" Margin="15,10,0,10">Save</Button>
+                <Viewbox Margin="0,10,2,10">
+                    <Grid HorizontalAlignment="Left" Height="40" Margin="0" VerticalAlignment="Top" Width="80">
+                        <Rectangle x:Name="Back" Fill="WhiteSmoke" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="76" Margin="2,2,0,0" RadiusY="20" RadiusX="20" MouseLeftButtonDown="Back_MouseLeftButtonDown"/>
+                        <Ellipse x:Name="Dot" Fill="DarkSalmon" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="30" MouseLeftButtonDown="Dot_MouseLeftButtonDown"/>
+                    </Grid>
+                </Viewbox>
+
+                <Button x:Name="CutBtn" Click="CutBtn_Click"  Background="DarkSalmon" FontWeight="DemiBold" FontSize="25" Margin="15,10,0,10">Cut</Button>
+                <Button x:Name="CopyBtn" Click="CopyBtn_Click"  Background="DarkSalmon" FontWeight="DemiBold" FontSize="25" Margin="15,10,0,10">Copy</Button>
+                <Button x:Name="PasteBtn" Click="PasteBtn_Click"  Background="DarkSalmon"  FontWeight="DemiBold" FontSize="25" Margin="15,10,0,10">Paste</Button>
+                <Button x:Name="SelectAllBtn" Click="SelectAllBtn_Click"  Background="DarkSalmon" FontWeight="DemiBold" FontSize="25" Margin="15,10,0,10">Select All</Button>
+            </WrapPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer Grid.ColumnSpan="2" Margin="0,0,0.333,-0.333">
+                <TextBox x:Name="txtBox" TextWrapping="Wrap"  FontSize="25"></TextBox>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
